@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin: 8px
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilos específicos */
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formularios</h1>
+
+    <h2> <center>Cargar Cliente</center></h2>
+    <form action="procesar_cargar_cliente.php" method="POST">
+        <label for="codigo">Código Cliente:</label>
+        <input type="text" id="codigo" name="codigo" required>
+        <br>
+        <label for="nombre">Nombre y Apellido:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+        <input type="submit" value="Cargar Cliente">
+    </form>
+
+    <h2><center>Cargar Novedades de un Cliente</center></h2>
+    <form action="procesar_cargar_novedades.php" method="POST">
+        <div class="form-group">
+            <label for="codigo">Cód. Cliente:</label>
+            <input type="text" id="codigo" name="codigo" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="nro_factura">Nro. Factura:</label>
+            <input type="text" id="nro_factura" name="nro_factura" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="importe">Importe:</label>
+            <input type="text" id="importe" name="importe" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="codigo_articulo">Cód. Artículo:</label>
+            <input type="text" id="codigo_articulo" name="codigo_articulo" required>
+          </div>
+          
+          <input type="submit" value="Guardar Movimiento">
+
+    </form>
+
+    <h2><center>Consultar Movimientos de un Cliente</center></h2>
+    <form action="procesar_consultar_movimientos.php" method="POST">
+        <label for="codigoCliente">Código Cliente:</label>
+        <input type="text" id="codigoCliente" name="codigoCliente" required>
+        <br>
+        <input type="submit" value="Consultar Movimientos">
+    </form>
+    <h2><center>Cargar Articulo</center></h2>
+    
+    <form action="procesar_cargar_articulos.php" method="POST">
+        <label for="codigo_articulo">Cód. Articulo:</label>
+        <input type="text" id="codigo_articulo" name="codigo_articulo" required>
+        <label for="nombre_articulo">Desc. Artículo:</label>
+        <input type="text" id="nombre_articulo" name="nombre_articulo" required>
+        <input type="submit" value="Generar Informe">
+
+      </form>
+      <h2><center>Consultar Movimientos de un Articulo</center></h2>
+      <form action="procesar_informe_articulos.php" method="POST">
+          <label for="ccodigo_articulo">Código Articulo:</label>
+          <input type="text" id="codigo_articulo" name="codigo_articulo" required>
+          <br>
+          <input type="submit" value="Consultar Movimientos">
+      </form>
+
+</body>
+
+</html>
